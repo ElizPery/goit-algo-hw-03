@@ -37,7 +37,7 @@ def copy_files_to_dest(source: Path):
     # Check if suffix in the list, if it is not, append it to the list and create dir
     if(suffix_of_file not in FOLDERS):
         FOLDERS.append(suffix_of_file)
-        destination.mkdir(parents=True)
+        destination.mkdir(parents=True, exist_ok=True)
 
     # Copy file
     shutil.copy(source, destination)
